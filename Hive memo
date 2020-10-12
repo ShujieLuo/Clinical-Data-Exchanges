@@ -1,0 +1,40 @@
+Hive
+# Create a Database:
+CREATE DATABASE MYDATABASE;
+USE MYDATABASE;
+CREATE TABLE drivers_staging (
+driverId INT, name STRING, ssn INT, location STRING, certified STRING, 
+wageplan STRING)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'  
+STORED AS TEXTFILE
+tblproperties("skip.header.line.count"="1");
+LOAD DATA INPATH '/WordCountTutorial/drivers.csv' INTO TABLE drivers_staging;
+
+# CREATE Staging TABLE drivers & Train and Load Data
+
+CREATE TABLE train_staging (
+ID INT, Age INT, Workclass STRING, Education STRING, MaritalStatus STRING,
+Occupation STRING, Relationship STRING, Race STRING, Sex STRING, HoursPerWeek INT,
+NativeCountry STRING, IncomeGroup STRING)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'  
+STORED AS TEXTFILE
+tblproperties("skip.header.line.count"="1");
+LOAD DATA INPATH '/WordCountTutorial/train.csv' INTO TABLE train_staging;
+
+# Create external joined final_joined_table, load data as ORC
+CREATE EXTERNAL TABLE IF NOT EXISTS MYDATABASE.final_joined_table (
+driverId INT, name STRING, ssn INT, Age INT, Education STRING, Occupation STRING)
+PARTITIONED BY (Race string, Sex string)
+STORED AS ORC
+LOCATION '/WordCountTutorial/final_joined_table';
+
+# Insert data into final_joined_table:
+Insert into table MYDATABASE.final_joined_table 
+Partition(Race, Sex)
+Select driverId, name, ssn, Age, Education, Occupation, Race, Sex from MYDATABASE.drivers_staging LEFT OUTER JOIN MYDATABASE.train_staging ON driverId = ID;
+
+# Order the table by ID ASC & Show partition of Race
+Select * from final_joined_table order by driverId ASC;
+show partitions final_joined_table partition(Race); 
