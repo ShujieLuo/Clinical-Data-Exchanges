@@ -15,3 +15,9 @@ The system establishes the automated exchange of member clinical information wit
 - ETL job execution is completed once the Data Warehouse is updated.
 - Dag execution completes after these Data Quality check.
 
+## Hardware Used
+EMR - I used a 3 node cluster with below Instance Types:
+m5.xlarge
+4 vCore, 16 GiB memory, EBS only storage
+EBS Storage:64 GiB
+Redshift: For Redshift I used 2 Node cluster with Instance Types dc2.large
