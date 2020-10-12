@@ -1,0 +1,19 @@
+
+Account_Created|Payment_Type|State|      Country|new_Price| load_date|                                                                            
++---------------+------------+-----+-------------+---------+----------+                                                                            
+|    1/2/09 4:42|        Visa|   MO|United States|     12.0|2020-08-06|                                                                            
+|   1/1/09 16:21|  Mastercard|   OR|United States|     12.0|2020-08-06|                                                                            
+| 11/15/08 15:47|        Visa|   AL|United States|     36.0|2020-08-06|                                                                            
+|  9/24/08 15:19|        Visa|   NJ|United States|     12.0|2020-08-06|                                                                            
+|    1/3/09 9:38|  Mastercard|   IL|United States|     12.0|2020-08-06|                                                                            
+|   1/2/09 17:43|  Mastercard|   TN|United States|     12.0|2020-08-06|                                                                            
+|    1/5/09 2:23|      Diners|   NY|United States|     12.0|2020-08-06|                                                                            
+|    1/2/09 8:32|  Mastercard|   TX|United States|     12.0|2020-08-06|                                                                            
+| 11/11/08 15:53|        Visa|   ID|United States|     12.0|2020-08-06|                                                                            
+|  12/9/08 12:07|        Visa|   NJ|United States|     12.0|2020-08-06|                                                                            
+|  12/30/08 5:44|      Diners|   UT|United States|     12.0|2020-08-06|                                                                            
+|    1/6/09 7:07|        Visa|   CA|United States|     12.0|2020-08-06|                                                                            
+|    1/1/09 1:56|        Visa|   TX|United States|     12.0|2020-08-06|                                                                            
+|    1/7/09 7:39|      Diners|   NY|United States|     12.0|2020-08-06|                                                                            
+|  10/24/08 6:48|        Visa|   IL|United States|     12.0|2020-08-06|                                                                            
++---------------+------------+-----+-------------+---------+----------+  
